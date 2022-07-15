@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import { Container, Grid, Row, Col, Panel, Button, Icon, Alert } from 'rsuite';
 import { auth, database } from '../misc/firebase';
 
-function SignIn() {
+const SignIn=() => {
   const signInWithprovider = async provider => {
     try {
       const { additionalUserInfo, user } = await auth.signInWithPopup(provider);
