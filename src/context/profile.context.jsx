@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useRef,
-} from 'react';
+import React, {createContext,useContext,useState,useEffect,} from 'react';
 import { auth, database } from '../misc/firebase';
 
 const ProfileContext = createContext();
@@ -34,7 +28,7 @@ export const ProfileProvider = ({ children }) => {
         });
       } else {
         if (userRef) {
-          useRef.off();
+          userRef.off();
         }
 
         setProfile(null);
