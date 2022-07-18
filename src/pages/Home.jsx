@@ -1,8 +1,12 @@
 import React from 'react';
 import {Grid, Row, Col} from 'rsuite';
 import Sidebar from "../components/Sidebar";
+import { RoomsProvider } from '../context/rooms.context';
 
-const Home = () => (
+const Home = () => {
+
+    return (
+<RoomsProvider>
 
      <Grid fluid className="h-100">
         <Row className="h-100">
@@ -11,7 +15,9 @@ const Home = () => (
             </Col>
         </Row>
     </Grid>
+</RoomsProvider>
     );
+};
 
 
 export default Home;
