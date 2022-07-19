@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect} from "react";
+import React, {createContext, useState, useEffect, useContext} from "react";
 import { database } from "../misc/firebase";
 import { transformToArrWithId} from '../misc/helpers'
 
@@ -6,7 +6,7 @@ const RoomsContext = createContext();
 
 
 export const RoomsProvider= ({children}) => {
-    // eslint-disable-next-line
+    
     const [rooms, setRooms]= useState(null);
 
     useEffect (() => {
@@ -27,3 +27,5 @@ return (
  <RoomsContext.Provider value={rooms}>{children}</RoomsContext.Provider>
 );
 };
+
+export const UseRooms = () => useContext(RoomsContext);
