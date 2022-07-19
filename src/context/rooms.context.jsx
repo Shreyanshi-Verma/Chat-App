@@ -28,4 +28,4 @@ return (
 );
 };
 
-export const UseRooms = () => useContext(RoomsContext);
+export const useRooms = () => useContext(RoomsContext);

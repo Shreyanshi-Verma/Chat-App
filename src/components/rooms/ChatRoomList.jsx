@@ -1,12 +1,12 @@
 import React from 'react'
 import { Loader, Nav } from 'rsuite'
 import { Link, useLocation } from 'react-router-dom';
-import { UseRooms } from '../../context/rooms.context'
+import { useRooms } from '../../context/rooms.context'
 import RoomItem from './RoomItem'
 
 const ChatRoomList = ({aboveElHeight}) => {
 
-const rooms = UseRooms();
+const rooms = useRooms();
 const location= useLocation();
 
   return ( <Nav 
