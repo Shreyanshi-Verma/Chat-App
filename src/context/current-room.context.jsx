@@ -13,7 +13,7 @@ export const CurrentRoomProvider = ({children, data}) => {
             {children}
             </CurrentRoomContext.Provider>
     );
-}
+};
 
 export const useCurrentRoom= selector=>
 useContextSelector(CurrentRoomContext, selector);
