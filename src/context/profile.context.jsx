@@ -27,6 +27,7 @@ export const ProfileProvider = ({ children }) => {
 
     const authUnsub = auth.onAuthStateChanged(authObj => {
       if (authObj) {
+
         userStatusRef =database.ref(`/status/${authObj.uid}`);
         userRef = database.ref(`/profiles/${authObj.uid}`);
         userRef.on('value', snap => {
@@ -48,7 +49,7 @@ export const ProfileProvider = ({ children }) => {
        
 
         database.ref('.info/connected').on('value',(snapshot) => {
-          if (snapshot.val() === false) {
+          if (!!snapshot.val() === false) {
               return;
           };
 

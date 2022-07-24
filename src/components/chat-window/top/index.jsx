@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { useCurrentRoom } from '../../../context/current-room.context';
 import { useMediaQuery } from '../../../misc/custom-hooks';
 import RoomInfoBtnModal from './RoomInfoBtnModal';
+import EditRoomBtnDrawer from './EditRoomBtnDrawer';
 
 
 const Top = () => {
   const name = useCurrentRoom(v => v.name);
-  
+   // eslint-disable-next-line
+  const isAdmin= useCurrentRoom(v => v.isAdmin);
   const isMobile = useMediaQuery('(max-width: 992px)');
 
   return (
@@ -30,8 +32,9 @@ const Top = () => {
         </h4>
 
         <ButtonToolbar className="ws-nowrap">
-        todo
+          {isAdmin && <EditRoomBtnDrawer />}
         </ButtonToolbar>
+       
       </div>
 
       <div className="d-flex justify-content-between align-items-center">

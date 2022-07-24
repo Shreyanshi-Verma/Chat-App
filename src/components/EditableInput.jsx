@@ -6,8 +6,8 @@ const EditableInput = ({
    onSave,
     label =null,
      placeholder='Write your value',
-     // eslint-disable-next-line 
-      emptyMsg= 'Input is empty',
+     emptyMsg= 'Input is empty',
+   wrapperClassName="",
       ...inputProps
     }) => {
 
@@ -30,6 +30,7 @@ const trimmed= input.trim();
 
 if(trimmed=== '') {
 Alert.info(emptyMsg, 4000)
+return;
 }
 
 if(trimmed !== initialValue)  {
@@ -42,7 +43,7 @@ setIsEditable(false);
 
       
       return (
-      <div>
+      <div className={wrapperClassName}>
 {label}
 <InputGroup>
 <Input
@@ -66,6 +67,6 @@ setIsEditable(false);
       );
 };
 
-export default EditableInput
+export default EditableInput;
 
 
