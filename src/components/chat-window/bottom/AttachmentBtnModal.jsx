@@ -30,11 +30,11 @@ const AttachmentBtnModal = ({afterUpload}) => {
             return  storage
                 .ref(`/chat/${chatId}`)
                 .child(Date.now() + f.name)
-             .put( f.blobFile,
-              {
-                cacheControl: `public, max-age=${3600 * 24 * 3}`,
+             .put( f.blobFile, {
+               cacheControl: `public, max-age=${3600 * 24 * 3}`,
               })
-          });
+            });
+             
 
           const uploadSnapshots = await Promise.all(uploadPromises);
 
